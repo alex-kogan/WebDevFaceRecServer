@@ -25,7 +25,7 @@ server.use(bodyParser.json())
 server.use(cors());
 
 server.get('/', (req, res) => {
-
+	res.json('running')
 });
 
 //let hashP = bcrypt.hashSync(database.users[0].password); // doing it sync as this doesn't happne in real life in the server
