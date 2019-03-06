@@ -24,29 +24,8 @@ const db = knex({
 server.use(bodyParser.json())
 server.use(cors());
 
-const database = {
-	users: [
-		{
-			id: '123',
-			name: 'John',
-			email: 'john@gmail.com',
-			password: 'cookies',
-			entries: 0,
-			joined: new Date()
-		},
-		{
-			id: '124',
-			name: 'Sally',
-			email: 'sally@gmail.com',
-			password: 'bananas',
-			entries: 0,
-			joined: new Date()
-		}		
-	]
-};
-
 server.get('/', (req, res) => {
-	res.json(database.users);
+
 });
 
 //let hashP = bcrypt.hashSync(database.users[0].password); // doing it sync as this doesn't happne in real life in the server
