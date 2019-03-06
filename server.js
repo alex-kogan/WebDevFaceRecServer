@@ -6,18 +6,13 @@ const knex = require('knex');
 
 const server = express();
 
-const PGserver = '127.0.0.1';
-const PGuser = 'postgres';
-const PGpassword = 'Alex1885';
-const PGdatabase = 'smart-brain';
+const PGserver = process.env.DATABASE_URL;
 
 const db = knex({
   client: 'pg',
   connection: {
-    host : PGserver,
-    user : PGuser,
-    password : PGpassword,
-    database : PGdatabase
+    connectionString : PGserver,
+    ssl: true,
   }
 });
 
