@@ -65,7 +65,7 @@ server.post('/register', (req, res) => {
 					.into('users')
 					.returning('*')
 					.then(user => {
-						res.json(user[0])
+						res.json(user[0]+' alex')
 					})
 			})
 			.then(trx.commit)
