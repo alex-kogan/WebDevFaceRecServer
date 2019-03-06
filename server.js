@@ -65,13 +65,13 @@ server.post('/register', (req, res) => {
 					.into('users')
 					.returning('*')
 					.then(user => {
-						res.json(user[0]+' alex')
+						res.json(user[0])
 					})
 			})
 			.then(trx.commit)
 			.catch(trx.rollback)
 			})
-		.catch(error => res.status(400).json('error alex'))
+		.catch(error => res.status(400).json(error))
 	})
 })
 
