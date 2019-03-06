@@ -16,14 +16,31 @@ const db = knex({
   }
 });
 
+/* for local pg database
+
+const PGserver = '127.0.0.1';
+const PGuser = 'postgres';
+const PGpassword = 'Alex1885';
+const PGdatabase = 'smart-brain';
+
+ const db = knex({
+  client: 'pg',
+  connection: {
+    host : PGserver,
+    user : PGuser,
+    password : PGpassword,
+    database : PGdatabase
+  }
+});
+
+*/
+
 server.use(bodyParser.json())
 server.use(cors());
 
 server.get('/', (req, res) => {
 	res.json('running')
 });
-
-//let hashP = bcrypt.hashSync(database.users[0].password); // doing it sync as this doesn't happne in real life in the server
 
 server.post('/signin', (req, res) => {
 	const {email, password} = req.body;
