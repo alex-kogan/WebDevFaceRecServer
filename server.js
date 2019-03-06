@@ -71,7 +71,7 @@ server.post('/register', (req, res) => {
 			.then(trx.commit)
 			.catch(trx.rollback)
 			})
-		.catch(error => res.status(400).json(error))
+		.catch(error => res.status(400).json('error alex'))
 	})
 })
 
